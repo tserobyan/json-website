@@ -1,0 +1,25 @@
+<div class="comments">
+	<h2>{{data.title}}</h2>
+	{% for comment in data.list %}
+		<div class="comment">
+			<span class="comment_author">
+				<img src="{{comment.author.image}}">
+				<strong>{{comment.author.name}}</strong>
+			</span>
+			<span class="comment_text">
+				{{comment.comment}}
+			</span>
+			{% for response in comment.responses %}
+				<div class="comment_response">
+					<span class="response_author">
+						<img src="{{response.author.image}}">
+						<strong>{{response.author.name}}</strong>
+					</span>
+					<span class="response_text">
+						{{response.response}}
+					</span>
+				</div>
+			{% endfor %}
+		</div>
+	{% endfor %}
+</div>

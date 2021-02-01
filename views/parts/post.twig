@@ -1,0 +1,10 @@
+<div class="post">
+	<h2 class="post_title">{{data.title}}</h2>
+	<p class="post_info">
+		{% for i in data.info %}<span class="post_{{i.name}}"> {{i.name}}: {{i.value}} </span>{% endfor %}
+	</p>
+    <span class="post_content">
+        {{data.content}}
+    </span>
+	{% include './comments.twig' with {data: data.comments} %}
+</div>

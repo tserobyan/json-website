@@ -1,0 +1,7 @@
+{% for element in content %}
+	{% if element.name %}
+		{% include (element.type ~ '/' ~ element.name ~ '.twig') with {data: element.data} %}
+	{% else %}
+		{{element}}
+	{% endif %}
+{% endfor %}

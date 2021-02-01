@@ -1,0 +1,10 @@
+<ul class="menu {% if dropdown %}dropdown{% endif %}">
+	{% for element in data %}
+		<li>
+			<a href="{{element.href}}" class="menu_link {{element.class}}">{{element.text}}</a>
+			{% if element.dropdown %}
+				{% include './menu.twig' with {data: element.dropdown, dropdown:true} %}
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>

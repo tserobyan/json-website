@@ -1,0 +1,11 @@
+<header>
+	<nav class="header_navbar">
+		{% include './title.twig' with {data: data.title} %}
+		{% if data.menu %}
+			{% include './menu.twig' with {data: data.menu} %}
+		{% endif %}
+	</nav>
+	{% if data.slideshow %}
+		{% include './slideshow.twig' with {data: data.slideshow} %}
+	{% endif %}
+</header>

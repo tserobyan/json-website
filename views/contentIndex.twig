@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% for meta in head.metas %}
+			<meta {% for atribute in meta %} {{atribute[0]}}="{{atribute[1]}}" {% endfor %}>
+		{% endfor %}
+		{% for style in head.styles %}
+			<link rel="{{style.rel}}" type="{{style.type}}" href="{{style.href}}" {% if style.media %} media="{{style.media}}" {% endif %}>
+		{% endfor %}
+		<title>{{ head.title }}</title>
+	</head>
+	<body>
+		{% include "content.twig" with {content} %}
+		{% for script in scripts %}
+			<script src="{{script.src}}"></script>
+		{% endfor %}
+	</body>
+</html>
